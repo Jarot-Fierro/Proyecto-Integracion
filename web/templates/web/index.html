@@ -1,0 +1,65 @@
+{% extends 'base/baseindex.html' %}
+{% load static %}
+
+{% block content_index %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{% if message.tags == 'error' %}{% else %}alert alert-success {% endif %}">
+                <div class="alert-content">
+                    <i class="bi bi-person-circle mx-3"></i>
+                    {{message}}
+                </div>
+                <Button type="button" class="close" data-dismiss="alert">x</Button>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Principales funciones</h1>
+    
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Crear Registro</h5>
+                        <p class="card-text">Crea productos, define su valor y dales un lugar en tu inventario para que sean parte de tu historia empresarial.</p>
+                        <a href="{% url 'gestion_productos' %}" class="btn btn-primary">Crear</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Actualizar Registro</h5>
+                        <p class="card-text">Modifica tus productos, actualiza sus detalles y ajusta sus atributos.</p>
+                        <a href="{% url 'gestion_productos' %}" class="btn btn-warning">Actualizar</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Eliminar Registro</h5>
+                        <p class="card-text">Elimina los productos que han cumplido su ciclo y brinda lugar a nuevas oportunidades. 
+                            Esta función te permite mantener un inventario eficiente, manteniendo solo lo esencial para seguir adelante.</p>
+                        <a href="{% url 'gestion_productos' %}" class="btn btn-danger">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Descargar Registros</h5>
+                        <p class="card-text">Descarga un resumen de tus productos eliminados, 
+                            manteniendo un registro histórico de tu trayectoria. Esta función te ofrece la posibilidad de revisar el pasado para inspirar tu futuro.</p>
+                        <a href="{% url 'reportes' %}" class="btn btn-success">Descargar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block nav_login_logout %}
+    <ul class="d-flex justify-content-center">
+        <a class="btn btn-dark btn-presentation-login" href="{% url 'logout_view' %}">Cerrar Sesión</a>
+    </ul>
+{% endblock %}
+{% block content %}
+    <div class="row not-p-m">
+
+        <div class="col-lg-2 menu bg-dark">
+            <nav class="nav pt-5">
+                <ul class="nav flex-column gap-4">
+                    <li class="nav-item">
+                        <a href="{% url 'index' %}" class="nav-link text-white">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'reportes' %}" class="nav-link text-white">Generar Reporte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'gestion_productos' %}" class="nav-link text-white">Gestión de Productos</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="col-lg-10">
+            {% block content_index %}
+            {% endblock %}
+        </div>
+        
+    </div>
+{% endblock %}

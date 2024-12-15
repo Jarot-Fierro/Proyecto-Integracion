@@ -1,0 +1,40 @@
+{% extends 'base/baseindex.html' %}
+{% load static %}
+
+{% block content_index %}
+    <div class="row mt-5">
+        <div class="col-9">
+            <h4>Registro de productos eliminados</h4>
+        </div>
+        <div class="col-3">
+            <h6>Descargar Reporte</h6>
+            <a href="{% url 'descargar_reportes' %}" style="color: seagreen;"><i class="bi bi-file-earmark-spreadsheet-fill"></i>Excel</Em></a>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre del Producto</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Fecha de Compra</th>
+                    <th>Fecha de Eliminación</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos_eliminados %}
+                    <tr>
+                        <td>{{ producto.id }}</td>
+                        <td>{{ producto.nombre_producto }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.stock }}</td>
+                        <td>{{ producto.fecha_compra }}</td>
+                        <td>{{ producto.fecha_eliminacion }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

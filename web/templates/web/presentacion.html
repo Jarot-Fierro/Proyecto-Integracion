@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block nav_login_logout %}
+    <ul class="d-flex justify-content-center">
+        <a class="btn btn-dark btn-presentation-login" href="{% url 'login_view' %}">Iniciar Sesión</a>
+    </ul>
+{% endblock %}
+{% block content %}
+    <section>
+        <div class="row m-5">
+        <div class="col-lg-6 d-flex flex-column text-center justify-content-center align-items-center">
+            <h1>Gestiona tu Inventario!</h1>
+            <p class="mx-5">Bienvenido a nuestra plataforma de gestión de inventario, donde la eficiencia y la facilidad de uso se unen para ofrecerte el control total sobre tus productos.</p>
+            <a class="btn btn-primary btn-presentation" href="{% url 'login_view' %}" >Empezar</a>
+        </div>
+        <div class="col-lg-5 d-flex justify-content-center">
+            <img class="" src="{% static 'web/media/img/inv_presentation.svg' %}" alt="Imagen isometrica de gestión de inventario" height="400px">
+        </div>
+        <div class="row mt-5">
+            <div class="col-4 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'web/media/img/funciones.svg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h6>Funcionalidades clave</h6>
+                <p class="card-text">Un breve resumen sobre cómo tu servicio simplifica y optimiza la gestión de inventario para empresas o individuos.</p>
+                </div>
+            </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'web/media/img/monitoreo.svg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h6>Resumen general del servicio</h6>
+                <p class="card-text">Destaca algunas de las funciones clave del sistema, como seguimiento en tiempo real, categorización de productos, alertas de agotamiento de stock, etc.</p>
+                </div>
+            </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'web/media/img/error.svg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h6>Beneficios para el usuario</h6>
+                <p class="card-text">Destaca los beneficios que los usuarios obtendrán al usar tu sistema, como aumento de la eficiencia, reducción de errores, ahorro de tiempo, etc.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+{% endblock %}
